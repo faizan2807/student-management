@@ -34,9 +34,15 @@ export function Edit() {
     }
   }, [student]); 
 
+function handleBack(){
+  navigate('/home')
+}
+
   return (
     <div className="container-fluid d-flex justify-content-center mt-5">
-      <form onSubmit={formik.handleSubmit} className="border-dark border w-50 p-5">
+     <div className="border-dark border w-50 p-5">
+      <div className="btn btn-close float-end" onClick={handleBack}></div>
+     <form onSubmit={formik.handleSubmit} >
         <h2>Edit Student</h2>
         <dl>
           <dt>Id</dt>
@@ -52,6 +58,7 @@ export function Edit() {
         </dl>
         <button className="btn btn-success w-100" type="submit">Save</button>
       </form>
+     </div>
     </div>
   );
 }
